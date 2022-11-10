@@ -1,48 +1,78 @@
 //Create variables for rock paper and scissors
 const SELECTIONS = ["rock", "paper", "scissors"]
-const computerSelection = getComputerChoice()
 
 //Create variables to keep score
 let playerScore = 0;
 let computerScore = 0;
+
 //have a function randomly call one of the strings from the array
 function getComputerChoice() {
   const randomChoice = Math.floor(Math.random() * SELECTIONS.length)
   return SELECTIONS[randomChoice]
 }
-console.log("The computer selected: ", computerSelection);
 
-//Ask user to choose between rock, paper of scissors
-const playerSelection = prompt("Please choose rock, paper, or scissors").toLowerCase();
-
-console.log("You have selected: ", playerSelection);
-
-  if (playerSelection == computerSelection) 
-  console.log("Tie! Please choose again!");
-
-  else if ((playerSelection == "rock") && (computerSelection == "paper")) 
-    console.log("You Lose! Paper beats Rock!");
-
-  else if ((playerSelection == "paper") && (computerSelection == "scissors"))
-    console.log("You Lose! Scissors beats Paper!");
-
-  else if ((playerSelection == "scissors") && (computerSelection == "rock")) 
-    console.log("You Lose! Rock beats Scissors!");
-
-  else if ((playerSelection == "rock") && (computerSelection == "scissors"))
-    console.log("You Won! Rock beats Scissors!");
-
-  else if ((playerSelection == "paper") && (computerSelection == "rock"))
-    console.log("You Won! Paper beats Rock!");
-
-  else if ((playerSelection == "scissors") && (computerSelection == "paper"))
-    console.log("You Won! Scissors beats Paper!");
-
-  else
-    console.log("Please enter a valid responce");
-  
+//have a function determining who wins the round
 function playRound(playerSelection, computerSelection) {
 
+  if (playerSelection == computerSelection) {
+    return "Tie! Please choose again!";
+  }
+
+  else if ((playerSelection == "rock") && (computerSelection == "paper")) {
+    computerScore = computerScore + 1;
+    return "You lose! Paper beats rock";
+  }
+
+  else if ((playerSelection == "paper") && (computerSelection == "scissors")) {
+    computerScore = computerScore + 1;
+    return "You lose! Scissors beats paper";
+  }
+
+  else if ((playerSelection == "scissors") && (computerSelection == "rock")) {
+    computerScore = computerScore + 1;
+    return "You lose! Rock beats scissors";
+  }
+
+  else if ((playerSelection == "rock") && (computerSelection == "scissors")) {
+    playerScore = playerScore + 1;
+    return "You won! Rock beats scissors";
+  }
+
+  else if ((playerSelection == "paper") && (computerSelection == "rock")) {
+    playerScore = playerScore + 1;
+    return "You won! Paper beats rock";
+  }
+
+  else if ((playerSelection == "scissors") && (computerSelection == "paper")) {
+    playerScore = playerScore + 1;
+    return "Scissors beats paper";
+  }
+
+  else {
+    return "Invalid Option, please try again";
+  }
 }
 
-//function game()
+let playerSelection = "rock";
+let computerSelection = undefined;
+
+//have a function determining who won the game
+function game() {
+  if (playerScore < computerScore) {
+    return "You lose! Better luck next time!";
+  }
+  else if (playerScore > computerScore){
+    return "You won! Congratulations!";  
+  }
+  else if (playerScore == computerScore){
+    return "It's a tie! Try again";
+  }
+}
+
+//have a for loop
+  for (let i = 0; i < 5; i++) {
+    computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+  }
+
+  console.log(game());
