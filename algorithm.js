@@ -52,7 +52,7 @@ function playRound(playerSelection, computerSelection) {
     return "Invalid Option, please try again";
   }
 }
-
+// Define the selections as global variables
 let playerSelection = "rock";
 let computerSelection = undefined;
 
@@ -69,10 +69,12 @@ function game() {
   }
 }
 
-//have a for loop
+//have a for loop to determine the amount of rounds
   for (let i = 0; i < 5; i++) {
+   //call function to randomly choose a computer selection for each round
     computerSelection = getComputerChoice();
+  //call function to play each round
     console.log(playRound(playerSelection, computerSelection));
   }
-
+//call out the function to name who won the game
   console.log(game());

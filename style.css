@@ -1,0 +1,53 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: #c9af1c;
+}
+
+main {
+  width: 100%;
+}
+.title {
+  display:block;
+  color: black;
+  font-size: 48px;
+  font-weight: bold;
+  margin: 10px;
+  text-align: center;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  border-style: groove;
+  border-width: .75em;
+  border-color: rgba(88, 27, 145, 0.755);
+  padding: 20px;
+  margin: auto 8px;
+
+}
+
+.instructions {
+  margin-bottom: 50px;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 32px;
+}
+
+.playerscore-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 10px;
+  border-style: outset;
+  border-width: .3em;
+}
+
+.playerscore-info {
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
+}
