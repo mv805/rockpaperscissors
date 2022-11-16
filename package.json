@@ -1,0 +1,22 @@
+{
+  "name": "rockpaperscissors",
+  "version": "1.0.0",
+  "description": "Create a webpage to play Rock Paper Scissors using JavaScript.",
+  "main": "algorithm.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexguti119/rockpaperscissors.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexguti119/rockpaperscissors/issues"
+  },
+  "homepage": "https://github.com/alexguti119/rockpaperscissors#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
